@@ -1,0 +1,10 @@
+.allPage{
+    height: 100vh;
+    background: rgb(70, 64, 64);
+}
+
+.movieList{
+    height: 50vh;
+    width: 50vw;
+    
+}

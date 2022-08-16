@@ -1,0 +1,9 @@
+.dashboard{
+    height: 100vh;
+    background: rgb(36, 32, 32);
+}
+
+.movieImage {
+    width: 200px;
+    height: auto;
+}
