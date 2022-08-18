@@ -3,7 +3,6 @@ import NavigationBar from "./components/NavigationBar"
 import Dashboard from "./components/Dashboard"
 import { useState, useEffect } from "react";
 import "./style/container.css"
-import "./style/dashboard.css"
 
 function App() {
 
@@ -27,9 +26,7 @@ function App() {
           </div>
           {/* HEADER */}
           {/* Dashboard section to show the movies */}
-          <div>
-            <Dashboard allData = {allMovies}/>
-          </div>
+          <Dashboard allData = {allMovies}/>
           {/* Dashboard section to show the movies */}
       </div>
     </div>
