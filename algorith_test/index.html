@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Logic Test</h2>
+    <p>With the given value of [<span id="input"></span>]</p> 
+
+    <p>The output is</p> 
+    [ <br> 
+    <span id="result"></span><br> 
+    ]
+    
+</body>
+</html>
+<script>
+    var input = ['kita', 'atik', 'tika', 'aku', 'kia', 'makan', 'kua'];
+    var result = [];
+
+
+    for (var i = 0; i < input.length; i++)
+    {
+        var word = input[i];
+        var alphabetical = word.toLowerCase().split("").sort().join("");
+        result[i] = ['"'+word+'"']
+
+        for (var j = 0; j < input.length; j++)
+        {
+            if (i === j) 
+            {
+                continue;
+            }
+
+            var other = input[j];
+            if (alphabetical === other.toLowerCase().split("").sort().join("")) 
+            {
+                result[i].push('"'+other+'"');
+            }
+
+        }
+    }
+
+    for(var i = 0; i < result.length; i++)
+    {
+        if(result[i].length > 0)
+        {
+            for(var j = 0; j < result.length; j++)
+            {
+                if (i === j) 
+                {
+                    continue;
+                }
+
+                var beforearray = result[i].sort();
+                var afterarray = result[j].sort();
+                if(JSON.stringify(beforearray)==JSON.stringify(afterarray))
+                {
+                    result.splice(j,1);
+                }
+            }
+        }  
+    }
+    console.log(result);
+    var output = [];
+    for(var i = 0; i < result.length; i++)
+    {
+        var temporary = "[" + result[i].join() + "]";
+        output.push(temporary);
+    }
+
+   
+    document.getElementById('input').innerHTML = input;
+    document.getElementById('result').innerHTML = output;
+</script>

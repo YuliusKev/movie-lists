@@ -12,13 +12,12 @@ function App() {
   useEffect(() => {
     fetch(`https://www.omdbapi.com?apikey=715289b&s=Batman&page=1`)
      .then((response) => response.json())
-     .then((actualData) => setAllMovies(actualData.Search))
+     .then((actualData) => setAllMovies(actualData))
      .catch((err) => {
         console.log(err.message);
      });
    }, []);
 
-   console.log(allMovies);
   return (
     <div>
       <div className="allPage">

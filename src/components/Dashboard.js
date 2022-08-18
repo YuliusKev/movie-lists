@@ -1,30 +1,68 @@
 import {Card, Container, Row, Col} from "react-bootstrap"
 import poster from "../img/posters/poster_1.png"
+import { useState, useEffect } from "react";
 
-const Dashboard = (allData) => {
-    const testing = Object.keys(allData).map(function(key) {
-        return allData[key];
-    });
-
-    console.log(testing[0][0])
-    return testing[0].map((movie, index) => {
-        return (
-            <Container>
-                <Row>
-                    <Col key={index}>
-                        <Card>
-                            <Card.Img variant="top" src={movie.Poster} className="movieImage"/>
-                            <Card.Body>
-                            <Card.Text>
-                                {movie.Title} ({movie.Year})
-                            </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
-        )
-    })
+const Dashboard = (allMovies) => {
+   const movies  = allMovies['allData']['Search'];
+    
+   movies.map((value, index) => {
+    return (
+        <Container>
+            <Row>
+                <Col>
+                    <Card>
+                        <Card.Img variant="top" src={value.poster} className="movieImage"/>
+                        <Card.Body>
+                        <Card.Text>
+                            Some quick example text to build on the card title and make up the
+                            bulk of the card's content.
+                        </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
+    );
+   })
+    return (
+        <Container>
+            <Row>
+                <Col>
+                    <Card>
+                        <Card.Img variant="top" src={poster} className="movieImage"/>
+                        <Card.Body>
+                        <Card.Text>
+                            Some quick example text to build on the card title and make up the
+                            bulk of the card's content.
+                        </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col>
+                    <Card>
+                        <Card.Img variant="top" src={poster} className="movieImage"/>
+                        <Card.Body>
+                        <Card.Text>
+                            Some quick example text to build on the card title and make up the
+                            bulk of the card's content.
+                        </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                 <Col>
+                    <Card>
+                        <Card.Img variant="top" src={poster} className="movieImage"/>
+                        <Card.Body>
+                        <Card.Text>
+                            Some quick example text to build on the card title and make up the
+                            bulk of the card's content.
+                        </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
+    )
 }
 
 export default Dashboard
